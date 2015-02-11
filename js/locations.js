@@ -109,7 +109,7 @@ window.app.locations = {
     "espaceDetente1": { fill: "#e8ec11", pathString: "m 79.259,375.365 -22.142,0 0,32.98 22.142,0 0,-32.98 z"},
     "espaceDetente2": { fill: "#e8ec11", pathString: "m 79.259,485.282 -22.142,0 0,32.979 22.142,0 0,-32.979 z"},
     "espaceDetente3": { fill: "#e8ec11", pathString: "m 234.702,485.44 -18.403,0 0,32.894 18.403,0 0,-32.894 z"},
-    "espaceStartUp": { fill: "#ca1d29", pathString: "m 293.633,546.168 -67.108,0 0,22.134 67.108,0 0,-22.134 z"},
+    "Espace Start-Up": { fill: "#ca1d29", pathString: "m 293.633,546.168 -67.108,0 0,22.134 67.108,0 0,-22.134 z"},
     "espaceVIP": { fill: "#131d34", pathString: "m 138.3647,535.3896 -3.916,-3.956 -44.197,0 0,36.869 51.529,0 0,-29.465 -3.416,-3.448 z"},
     "handicafé": { fill: "#131d34", pathString: "m 216.385,305.799 -36.879,0 0,30.826 36.879,0 0,-30.826 z"},
     "restaurant": { fill: "#131d34", pathString: "m 151.376,300.325 -138.039,0 0,49.644 138.039,0 0,-49.644 z"},

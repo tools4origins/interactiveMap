@@ -11,28 +11,26 @@ window.app.map.init = function() {
     this.el.scaleAll(2);
     this.el.setViewBox(0, 0, width, height );
 
-    // Setting preserveAspectRatio to 'none' lets you stretch the SVG
     this.el.canvas.setAttribute("preserveAspectRatio", "none");
 
     var bindEvents = function(elem, locationId) {
-        var company = app.getCompanyByLocation(locationId);
-        if(company !== undefined) {
-            window.debug = elem;
-
+        var companies = app.getCompaniesByLocation(locationId);
+        if(companies.length>0) {
             elem.click(function () {
-                if(company.name!==$("#searchInput").val()) {
+                if(locationId!==$("#searchInput").val()) {
                     elem.animate({"fill-opacity": 0.3}, 100, "<", function() {
                         elem.animate({"fill-opacity": 1}, 700, "<");
                     });
 
-                    app.preview.show(company);
-                    console.log(elem, company);
+                    app.preview.show(companies);
 
-                    $("#searchInput").val(company.name);
+                    $("#searchInput").val(locationId);
                     app.menu.render();
                     app.map.redraw();
                 } else {
                     $("#searchInput").val("");
+
+                    app.preview.show("");
                     app.menu.render();
                     app.map.redraw();
                 }

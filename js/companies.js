@@ -88,7 +88,7 @@ window.app.companiesBySector = {
             }, {
                 name: "1000mercis",
                 logo: "1000mercis.png",
-                locationId: "espaceStartUp"
+                locationId: "Espace Start-Up"
             }, {
                 name: "Devoteam Consulting",
                 logo: "devoteam.png",
@@ -185,7 +185,7 @@ window.app.companiesBySector = {
             }, {
                 name: "Keecker",
                 logo: "keecker.png",
-                locationId: "espaceStartUp"
+                locationId: "Espace Start-Up"
             }, {
                 name: "Withings",
                 logo: "withings.jpg",
@@ -294,7 +294,7 @@ window.app.companiesBySector = {
             }, {
                 name: "Sublime SKINZ",
                 logo: "sublimeskinz.jpg",
-                locationId: "espaceStartUp"
+                locationId: "Espace Start-Up"
             }, {
                 name: "Jump Informatique",
                 logo: "jumpinformatique.jpg",
@@ -306,23 +306,23 @@ window.app.companiesBySector = {
             }, {
                 name: "Melusyn",
                 logo: "melusyn.jpg",
-                locationId: "espaceStartUp"
+                locationId: "Espace Start-Up"
             }, {
                 name: "Magency Digital",
                 logo: "magency.png",
-                locationId: "espaceStartUp"
+                locationId: "Espace Start-Up"
             }, {
                 name: "Addengo",
                 logo: "addengo.png",
-                locationId: "espaceStartUp"
+                locationId: "Espace Start-Up"
             }, {
                 name: "Pricematch",
                 logo: "pricematch.png",
-                locationId: "espaceStartUp"
+                locationId: "Espace Start-Up"
             }, {
                 name: "Mevia",
                 logo: "mevia.png",
-                locationId: "espaceStartUp"
+                locationId: "Espace Start-Up"
             }, {
                 name: "Linagora",
                 logo: "linagora.gif",
@@ -330,15 +330,15 @@ window.app.companiesBySector = {
             }, {
                 name: "Upslide",
                 logo: "upslide.jpg",
-                locationId: "espaceStartUp"
+                locationId: "Espace Start-Up"
             }, {
                 name: "BAM",
                 logo: "bam.png",
-                locationId: "espaceStartUp"
+                locationId: "Espace Start-Up"
             }, {
                 name: "DxO",
                 logo: "dxo.png",
-                locationId: "espaceStartUp"
+                locationId: "Espace Start-Up"
             }, {
                 name: "Ubisoft",
                 logo: "ubisoft.png",
@@ -376,8 +376,8 @@ window.app.companiesBySector = {
                 locationId: "B1"
             }, {
                 name: "Legos",
-                logo: "legos.jpg",
-                locationId: "espaceStartUp"
+                logo: "legos.png",
+                locationId: "Espace Start-Up"
             }, {
                 name: "Sopelec",
                 logo: "scopelec.jpg",
@@ -440,7 +440,7 @@ window.app.companiesBySector = {
             }, {
                 name: "Protectic",
                 logo: "protectic.jpg",
-                locationId: "espaceStartUp"
+                locationId: "Espace Start-Up"
             }
         ]
     },
@@ -459,7 +459,7 @@ window.app.companiesBySector = {
             }, {
                 name: "Blablacar",
                 logo: "blablacar.jpg",
-                locationId: "espaceStartUp"
+                locationId: "Espace Start-Up"
             }
         ]
     },
@@ -513,11 +513,11 @@ window.app.companiesBySector = {
             }, {
                 name: "Sprint JE",
                 logo: "sprint.png",
-                locationId: "espaceStartUp"
+                locationId: "Espace Start-Up"
             }, {
                 name: "Telecom Etude",
                 logo: "telecometude.png",
-                locationId: "espaceStartUp"
+                locationId: "Espace Start-Up"
             }, {
                 name: "Autorité des marchés financiers",
                 logo: "amf.jpg",
@@ -586,14 +586,16 @@ window.app.getCompanies = function() {
     return companies;
 };
 
-window.app.getCompanyByLocation = function(locationId) {
+window.app.getCompaniesByLocation = function(locationId) {
+    var returnedCompanies=[];
     for(var sectorId in this.companiesBySector) {
         var sectorCompanies = this.companiesBySector[sectorId].companies;
         for(var companyId in sectorCompanies) {
             var company = sectorCompanies[companyId];
             if(company.locationId==locationId) {
-                return company;
+                returnedCompanies.push(company);
             }
         }
     }
+    return returnedCompanies;
 };

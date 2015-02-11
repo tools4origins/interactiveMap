@@ -51,7 +51,7 @@ window.app.menu = {
                         companyLi.data("locationColor", "#FFB548");
                     }
                 }
-                if(company.name.toLowerCase().indexOf(filter)!==-1)
+                if(company.name.toLowerCase().indexOf(filter)!==-1 || company.locationId.toLowerCase()===filter)
                     sectorLis.push(companyLi);
                 else
                     numberOfHiddenLi++;
