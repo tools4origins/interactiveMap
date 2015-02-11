@@ -1,0 +1,110 @@
+body {
+    font-family: Arial,serif;
+    font-size: 14px;
+    margin: 20px auto;
+    overflow-y: hidden;
+}
+#titrePage {
+    float: right;
+    font-size: 80px;
+    font-weight: bold;
+    margin-right: 80px;
+}
+.link {
+    color: #456d86;
+}
+.link:hover {
+    color: #ccc;
+    cursor: pointer;
+}
+#companyListContainer {
+    -moz-column-gap: 3px;
+    -moz-columns: 10 auto;
+    background-color: #fefee2;
+    border-top: 9px solid #f4d070;
+    box-sizing: border-box;
+    height: 395px;
+    padding: 5px;
+    text-align: left;
+    width: 100%;
+    z-index: 1;
+}
+#companyListContainer ul {
+    height: 4567px;
+    margin: 0;
+    padding: 0;
+}
+#companyListContainer li {
+    background-color: white;
+    box-shadow: 1px 1px 4px 1px #bebebe;
+    cursor: pointer;
+    font-size: 10px;
+    height: 13px;
+    width: 170px;
+    list-style: outside none none;
+    margin-bottom: 2px;
+    padding: 5px;
+    -webkit-column-break-after: always;
+    break-inside: avoid-column;
+    word-wrap: break-word;
+    -webkit-hyphens: auto;
+}
+#companyListContainer li.hidden {
+    visibility: hidden;
+}
+#companyListContainer li:hover:not(.sector) {
+    background-color: #fed394;
+}
+#companyListContainer li.sector {
+    background-color: #f5f5f5;
+    border: medium none;
+    cursor: auto;
+    font-size: 14px;
+    font-weight: bold;
+    height: 38px;
+    line-height: 38px;
+    text-align: center;
+}
+
+#companyListContainer li.sector span {
+    display: inline-block;
+    line-height: normal;
+    vertical-align: middle;
+}
+
+
+#map {
+    transform: rotateX(180deg);
+}
+div#mapContainer {
+    display: inline-block;
+}
+div#previewDiv {
+    display: inline-block;
+    float: right;
+    position: absolute;
+    right: 300px;
+    top: 100px;
+}
+div#previewDiv img {
+    max-width: 230px;
+}
+#menu {
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+}
+#searchContainer {
+    background-color: #f1b000;
+    width: 400px;
+}
+input#searchInput {
+    border: 0 none;
+    border-radius: 0;
+    color: #4a4a4a;
+    font-size: 27px;
+    height: 25px;
+    margin: 5px 5px 5px 15px;
+    padding: 5px;
+    width: 357px;
+}

@@ -1,0 +1,8 @@
+{
+    "globals": {
+        "jQuery": false,
+        "$": false,
+        "ScaleRaphael": false,
+        "app": false
+    }
+}
