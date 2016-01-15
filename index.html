@@ -5,23 +5,30 @@
 	<link rel="shortcut icon" href="images/favAnciens.png" />
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css" />
+	<link href="css/keyboard.css" type="text/css" rel="stylesheet">
 	<script type="text/JavaScript" src="js/jquery.min.js"></script>
 	<script type="text/JavaScript" src="js/jquery-ui.min.js"></script>
 	<script type="text/JavaScript" src="js/raphael-min.js"></script>
 	<script type="text/JavaScript" src="js/scale.raphael.js"></script>
+	<script type="text/JavaScript" src="js/jquery.keyboard.js"></script>
+	<script type="text/JavaScript" src="js/frenchKeyboard.js"></script>
+
 
 	<link rel="stylesheet" media="screen" type="text/css" title="Design" href="css/map.css" />
+	<script type="text/JavaScript" src="js/companies.js"></script>
 	<script type="text/JavaScript" src="js/companies.js"></script>
 	<script type="text/JavaScript" src="js/locations.js"></script>
 	<script type="text/JavaScript" src="js/preview.js"></script>
 	<script type="text/JavaScript" src="js/menu.js"></script>
 	<script type="text/JavaScript" src="js/map.js"></script>
 	<script type="text/JavaScript" src="js/init.js"></script>
+
+
 </head>
 
 <body>
 <!-- Le corps -->
-<div id="titrePage">Plan interactif</div>
+<div id="titrePage">Plan du forum</div>
 
 <div id="mapContainer">
 	<div id="map"></div>
@@ -30,8 +37,16 @@
 
 <div id="previewDiv"></div>
 
+ <!-- Il est 2h, je me lève à 5h30, désolé mais c'est moche-->
+<div id="positionEntree">ENTRÉE</div>
+<div id="positionVESTIAIRES1">VESTIAIRES</div>
+<div id="positionVESTIAIRES2">VESTIAIRES</div>
+<div id="positionVIP">ESPACE VIP</div>
+<div id="positionRestaurant">RESTAURANT</div>
+<div id="positionHandicafe">HANDICAFÉ</div>
+<div id="positionCG">COMMISSARIAT GÉNÉRAL</div>
 <div id="menu">
-	<div id="searchContainer"><input type="text" id="searchInput"/></div>
+	<div id="searchContainer"><input type="text" id="searchInput" placeholder="Filtrer les exposants"/></div>
 	<div id="companyListContainer"></div>
  </div>
 </body>

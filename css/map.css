@@ -6,9 +6,10 @@ body {
 }
 #titrePage {
     float: right;
-    font-size: 80px;
+    font-family: Times New Roman;
+    font-size: 100px;
     font-weight: bold;
-    margin-right: 80px;
+    margin-right: 210px;
 }
 .link {
     color: #456d86;
@@ -19,9 +20,11 @@ body {
 }
 #companyListContainer {
     -moz-column-gap: 3px;
+    column-gap: 3px;
     -moz-columns: 10 auto;
+    columns: 10 auto;
     background-color: #fefee2;
-    border-top: 9px solid #f4d070;
+    border-top: 9px solid #227004;
     box-sizing: border-box;
     height: 395px;
     padding: 5px;
@@ -53,7 +56,7 @@ body {
     visibility: hidden;
 }
 #companyListContainer li:hover:not(.sector) {
-    background-color: #fed394;
+    /*background-color: #fed394;*/
 }
 #companyListContainer li.sector {
     background-color: #f5f5f5;
@@ -63,7 +66,19 @@ body {
     font-weight: bold;
     height: 38px;
     line-height: 38px;
+   /* text-align: center; */
+}
+#companyListContainer li.sector.reset {
+    background-color: white;
+    color: #4e4e4e;
+    font-size: 26px;
+    margin-top: 32px;
     text-align: center;
+}
+#companyListContainer li.sector.reset img {
+    height: 25px;
+    margin: 5px;
+    vertical-align: top;
 }
 
 #companyListContainer li.sector span {
@@ -84,10 +99,30 @@ div#previewDiv {
     float: right;
     position: absolute;
     right: 300px;
-    top: 100px;
+    top: 120px;
 }
 div#previewDiv img {
+    display: none;
+}
+div#previewDiv img.button {
+    display: inline;
+    max-height: 50px;
+    vertical-align: top;
+    margin-top: 20px;
+}
+div#previewDiv img.showed {
+    display: inline;
+}
+div#previewDiv img.logo {
     max-width: 230px;
+}
+div#previewDiv img.page {
+    max-width: 378px;
+}
+div#previewDiv div {
+    display: inline-block;
+    text-align: center;
+    width: 400px;
 }
 #menu {
     bottom: 0;
@@ -95,16 +130,141 @@ div#previewDiv img {
     width: 100%;
 }
 #searchContainer {
-    background-color: #f1b000;
+    background-color: #227004;
     width: 400px;
+    float: right;
 }
 input#searchInput {
     border: 0 none;
     border-radius: 0;
     color: #4a4a4a;
-    font-size: 27px;
-    height: 25px;
+    font-size: 24px;
+    height: 32px;
     margin: 5px 5px 5px 15px;
-    padding: 5px;
-    width: 357px;
+    padding: 0 5px;
+    width: 360px;
+}
+#companyList .locationId {
+    color: gray;
+    float: right;
+/*    display: none;*/
+}
+
+.ui-keyboard {
+    background-color: white;
+    border-color: gray;
+    border-style: solid;
+    border-width: 1px;
+}
+
+.ui-keyboard-button {
+    height: 4em;
+    min-height: 4em;
+    line-height: 2em;
+    background-color: white;
+    border: thin solid #c9c9c9;
+}
+
+.ui-keyboard-preview {
+    border: thin solid gray;
+    border-radius: 0;
+    height: 31px;
+    margin-left: -38px;
+    margin-right: -38px;
+    margin-top: -5px;
+    padding-left: 5px;
+    width: 370px;
+    font-size: 24px;
+}
+
+
+
+
+
+
+
+
+
+/* moche */
+#positionEntree {
+    font-size: 16px;
+    font-weight: bold;
+    height: 50px;
+    left: 571px;
+    position: absolute;
+    top: 429px;
+    width: 50px;
+    z-index: 5;
+}
+#positionVESTIAIRES1 {
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    height: 50px;
+    left: 660px;
+    position: absolute;
+    top: 346px;
+    width: 50px;
+    z-index: 5;
+}
+
+#positionVESTIAIRES2 {
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    height: 50px;
+    left: 511px;
+    position: absolute;
+    top: 346px;
+    width: 50px;
+    z-index: 5;
+}
+#positionVIP {
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    height: 50px;
+    left: 200px;
+    position: absolute;
+    text-align: center;
+    top: 101px;
+    width: 67px;
+    z-index: 5;
+}
+
+#positionHandicafe {
+    color: white;
+    font-size: 11px;
+    font-weight: bold;
+    height: 50px;
+    left: 363px;
+    position: absolute;
+    top: 571px;
+    width: 50px;
+    z-index: 5;
+}
+
+#positionRestaurant {
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    height: 50px;
+    left: 106px;
+    position: absolute;
+    top: 562px;
+    width: 50px;
+    z-index: 5;
+}
+
+#positionCG {
+    color: white;
+    font-size: 9px;
+    font-weight: bold;
+    height: 50px;
+    left: 348px;
+    position: absolute;
+    text-align: center;
+    top: 492px;
+    width: 78px;
+    z-index: 5;
 }

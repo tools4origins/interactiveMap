@@ -18,9 +18,7 @@ window.app.map.init = function() {
         if(companies.length>0) {
             elem.click(function () {
                 if(locationId!==$("#searchInput").val()) {
-                    elem.animate({"fill-opacity": 0.3}, 100, "<", function() {
-                        elem.animate({"fill-opacity": 1}, 700, "<");
-                    });
+//                    elem.animate({"fill-opacity": 0.3}, 100, "<");
 
                     app.preview.show(companies);
 
@@ -30,7 +28,7 @@ window.app.map.init = function() {
                 } else {
                     $("#searchInput").val("");
 
-                    app.preview.show("");
+                    app.preview.show(null);
                     app.menu.render();
                     app.map.redraw();
                 }
@@ -53,12 +51,25 @@ window.app.map.init = function() {
         location.path.attributes.fill = (location.fill!==undefined) ? location.fill : "white";
         if(location["stroke-width"]!==undefined)
             location.path.attributes["stroke-width"] = location["stroke-width"];
+        if(location.stroke!==undefined)
+            location.path.attributes.stroke = location.stroke;
 
         location.path.el = this.el.path(location.pathString)
                             .attr(location.path.attributes);
 //                          .animate({"fill-opacity": 0.50}, 400, ">");
 
         bindEvents(location.path.el, locationId);
+
+/*
+        var locationBBox = location.path.el.getBBox();
+
+        var x = locationBBox.cx;
+        var y = locationBBox.cy;
+
+        var locationName = this.el.print(x, y, locationId, this.el.getFont("Museo"), 10)
+                                .attr({color:"white"});*/
+        //el.transform("t100,100r45t-100,0");
+
     }
 };
 
@@ -67,12 +78,31 @@ window.app.map.redraw = function() {
         var location = app.locations[locationId];
 
         if((
-            $("#companyListContainer").find(".active").length === 0 ||
-            $("#companyListContainer").find(".active[data-locationid='"+locationId+"']").length > 0
-            ) && ($("#searchInput").val()==="" || $("#companyListContainer").find("[data-locationid='"+locationId+"']").length > 0)) {
-            location.path.el.animate({"fill-opacity": 1}, 400, ">");
+                $("#companyListContainer").find(".active").length === 0 ||
+                $("#companyListContainer").find(".active[data-locationid='"+locationId+"']").length > 0
+            ) && (
+                $("#searchInput").val()==="" &&
+                (
+                    $(".ui-keyboard-preview").val()===undefined ||
+                    $(".ui-keyboard-preview").val()===""
+                ) ||
+                $("#companyListContainer").find("[data-locationid='"+locationId+"']").length > 0
+            )) {
+
+
+            if(location.fill!==undefined && location.fill!=="#131d34") {
+                location.path.el.animate({"fill-opacity": 1}, 200, ">");
+                location.path.el.animate({"stroke-opacity": 1}, 200, ">");
+            } else {
+                location.path.el.animate({"fill-opacity": 1}, 200, ">");
+            }
         } else {
-            location.path.el.animate({"fill-opacity": 0.10}, 400, ">");
+            if(location.fill!==undefined && location.fill!=="#131d34") {
+                location.path.el.animate({"fill-opacity": 0.20}, 200, ">");
+                location.path.el.animate({"stroke-opacity": 0.30}, 200, ">");
+            } else {
+                location.path.el.animate({"fill-opacity": 0.70}, 200, ">");
+            }
         }
     }
 };
